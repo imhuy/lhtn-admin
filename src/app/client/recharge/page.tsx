@@ -1,7 +1,6 @@
 "use client";
 import Header from "@/components/Header";
 import AppLayout from "@/components/Layout/AppLayout";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { useState } from "react";
