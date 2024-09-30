@@ -65,7 +65,7 @@ const CustomerForm: React.FC = () => {
 
     const fetchData = async (id: string) => {
       try {
-        const response = await axios.get(`https://mattranhanoi.com/api/user/get-delegation?code=${id}`);
+        const response = await axios.get(`https://api.daihoi.net/api/user/get-delegation?code=${id}`);
 
         const { data } = response.data;
 
@@ -104,10 +104,10 @@ const CustomerForm: React.FC = () => {
     const formValidate = () => {
       console.log(selectedMember);
 
-      // if (!image) {
-      //   toast.error("Vui lòng chọn ảnh đại diện", { autoClose: 4000 });
-      //   return false;
-      // }
+      if (!image) {
+        toast.error("Vui lòng chọn ảnh đại diện", { autoClose: 4000 });
+        return false;
+      }
 
       return true;
     };
@@ -115,11 +115,12 @@ const CustomerForm: React.FC = () => {
       e.preventDefault();
       if (!formValidate()) return;
 
-      // formData.code = `HC${formData.phone.slice(-7)}`;
+      formData.code = `DH8.01701989`;
       formData.password = formData.phone;
       formData.username = formData.phone;
       formData.avatar = image.toString();
-      // formData.avatar = "";
+      formData.email = "";
+      formData.current_residence = "";
       formData.sex = selectedItem.id;
       formData.is_party_member = selectedMember.id;
       formData.delegation = delegation?.id?.toString();

@@ -1,10 +1,8 @@
 "use client";
 import html2canvas from "html2canvas";
+import { useQRCode } from "next-qrcode";
 import { redirect, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import { useQRCode } from "next-qrcode";
-import { productApi } from "@/api-client";
-import { position } from "html2canvas/dist/types/css/property-descriptors/position";
 const axios = require("axios");
 
 export default function Home() {
@@ -116,7 +114,7 @@ export default function Home() {
         const hostname = window.location.hostname;
       }
       try {
-        const response = await axios.get(`https://mattranhanoi.com/api/user/get-delegation?code=${id}`);
+        const response = await axios.get(`https://api.daihoi.net/api/user/get-delegation?code=${id}`);
 
         const { data } = response.data;
         setData(data);
@@ -140,9 +138,9 @@ export default function Home() {
     return (
       <div className='flex flex-col  h-full w-[400px]   '>
         <div className='  grid grid-cols-7  bg-[#1E6FA2] text-white items-center  pb-5 px-4 text  '>
-          <img src='/icon.svg' alt='Sample Image' className=' col-span-1  max-w-[50px] mt-4   ' />
+          <img src='/icon.png' alt='Sample Image' className=' col-span-1  max-w-[50px] mt-4   ' />
 
-          <span className='  mt-5 col-span-6  text-sm  font-workSansBold  '>UỶ BAN MTTQ VIỆT NAM THÀNH PHỐ HÀ NỘI</span>
+          <span className='  mt-5 col-span-6  text-sm  font-workSansBold  '>LHTN VIỆT NAM THÀNH PHỐ HÀ NỘI</span>
         </div>
         <div className='flex flex-col '>
           <span className=' uppercase text-center  text-red-600 font-workSansBold mt-4'>Chào mừng đại biểu</span>
@@ -247,24 +245,21 @@ export default function Home() {
             <img
               src={data?.avatar}
               alt='Sample Image'
-              className='w-[104px] h-[152px]  absolute  top-[293px] left-[148px] '
+              className='w-[104px] h-[152px]  absolute  top-[256px] left-[148px] '
             />
           ) : (
             <img
               src='/avatar.jpg'
               alt='Sample Image'
-              className='w-[104px] h-[152px]  absolute  top-[293px] left-[148px] '
+              className='w-[104px] h-[152px]  absolute  top-[256px] left-[148px] '
             />
           )}
 
-          <div className='flex flex-col self-center justify-start items-center   absolute top-[455px] left-[0px]  w-full '>
+          <div className='flex flex-col self-center justify-start items-center   absolute top-[421px] left-[0px]  w-full '>
             <span className=' text-[#0050A2] uppercase    font-utmHelvetIns  font-thin  text-[18px] text-center '>
-              {/* {data?.full_name} */}
               <div dangerouslySetInnerHTML={createMarkup(data?.full_name)} />
-              {/* <div dangerouslySetInnerHTML={createMarkup(data?.full_name)} /> */}
             </span>
-            <span className='  uppercase text-[#0050A2] leading-[22px]   font-utmHelvetIns  font-thin     self-center text-center text-[16px]'>
-              {/* {data?.position} */}
+            <span className='  uppercase text-[#0050A2] w-[80%]  leading-[22px]   font-utmHelvetIns  font-thin     self-center text-center text-[16px]'>
               <div dangerouslySetInnerHTML={createMarkup(data?.position)} />
             </span>
           </div>
@@ -283,46 +278,37 @@ export default function Home() {
           Tải thẻ đại biểu
         </button>
 
-        {!listVip.includes(id) ? (
-          <div className=' w-[400px] h-[600px] flex items-center flex-col  relative' id='captureQr'>
-            <img src='/the2.jpg' alt='Sample Image' className=' w-[400px] h-[600px]  rounded-[10px]' />
+        <div className=' w-[400px] h-[600px] flex items-center flex-col  relative' id='captureQr'>
+          <img src='/the2.jpg' alt='Sample Image' className=' w-[400px] h-[600px]  rounded-[10px]' />
 
-            <div className='absolute w-full h-[70]  top-[520px] left-[100.5px]'>
-              <span className='  font-bold text-xl text-center font-workSansBold mt-2'>{data?.full_name}</span>
-            </div>
-            <div className='absolute w-[70px] h-[70]  top-[320px] left-[248.5px]'>
-              <SVG
-                text={id ? id : "Không tìm thấy mã đại biểu"}
-                options={{
-                  margin: 2,
-                  width: 85,
-                  color: {
-                    dark: "#D32A2C",
-                    light: "#FFFFFF00",
-                  },
-                }}
-              />
-            </div>
+          <div className='absolute w-[70px] h-[70]  top-[320px] left-[248.5px]'>
+            <SVG
+              text={id ? id : "Không tìm thấy mã đại biểu"}
+              options={{
+                margin: 2,
+                width: 85,
+                color: {
+                  dark: "#D32A2C",
+                  light: "#FFFFFF00",
+                },
+              }}
+            />
+          </div>
 
-            <div className='absolute w-[70px] h-[70]  top-[320px] left-[74px]'>
-              <SVG
-                text={"https://chatbot.zalo.me/ref/4541578065285117921?id=tai-lieu-dai-hoi"}
-                options={{
-                  margin: 2,
-                  width: 85,
-                  color: {
-                    dark: "#D32A2C",
-                    light: "#FFFFFF00",
-                  },
-                }}
-              />
-            </div>
+          <div className='absolute w-[70px] h-[70]  top-[320px] left-[74px]'>
+            <SVG
+              text={"https://chatbot.zalo.me/ref/4541578065285117921?id=tai-lieu-dai-hoi"}
+              options={{
+                margin: 2,
+                width: 85,
+                color: {
+                  dark: "#D32A2C",
+                  light: "#FFFFFF00",
+                },
+              }}
+            />
           </div>
-        ) : (
-          <div className=' w-[400px] h-[600px] flex items-center flex-col  relative' id='captureQr'>
-            <img src='/imgvip.png' alt='Sample Image' className=' w-[400px] h-[600px]  rounded-[10px]' />
-          </div>
-        )}
+        </div>
 
         <button
           className='px-4 py-3  uppercase  bg-[#1E6FA2] rounded-md mt-2  text-center self-center text-white  font-workSansBold  w-full  '
@@ -339,12 +325,12 @@ export default function Home() {
         <div className='flex flex-col w-[400px]'>
           <MainView />
           <div className='px-4 py-3  uppercase  bg-[#1E6FA2] mt-2 flex flex-col  text-center self-center text-white  font-bold    '>
-            <img src='/icon.svg' alt='Sample Image' className='w-[98px] self-center  ' />
+            <img src='/icon.png' alt='Sample Image' className='w-[98px] self-center  ' />
 
             <span className='  mt-5  px-1 font-workSansBold '>
-              BAN TỔ CHỨC ĐẠI HỘI ĐẠI BIỂU MẶT TRẬN TỔ QUỐC VIỆT NAM THÀNH PHỐ HÀ NỘI
+              BAN TỔ CHỨC ĐẠI HỘI ĐẠI BIỂU LHTN VIỆT NAM THÀNH PHỐ HÀ NỘI
             </span>
-            <span className='     font-workSansBold '>LẦN THỨ XVIII NHIỆM KỲ 2024 - 2029</span>
+            <span className='     font-workSansBold '>LẦN THỨ VIII NHIỆM KỲ 2024 - 2029</span>
           </div>
 
           <div className='px-4 py-3  uppercase  bg-[#1E6FA2]  mt-[2px] flex flex-col  text-center self-center w-full h-[20px] text-white  font-bold    '></div>
