@@ -123,8 +123,6 @@ export default function Home() {
       }
     };
 
-    const listVip = ["HC341676", "HC330505"];
-
     useEffect(() => {
       if (id) {
         fetchData(id);
@@ -245,13 +243,13 @@ export default function Home() {
             <img
               src={data?.avatar}
               alt='Sample Image'
-              className='w-[104px] h-[152px]  absolute  top-[256px] left-[148px] '
+              className='w-[104px] h-[154px]  absolute  top-[256px] left-[148px] '
             />
           ) : (
             <img
               src='/avatar.jpg'
               alt='Sample Image'
-              className='w-[104px] h-[152px]  absolute  top-[256px] left-[148px] '
+              className='w-[104px] h-[154px]  absolute  top-[256px] left-[148px] '
             />
           )}
 

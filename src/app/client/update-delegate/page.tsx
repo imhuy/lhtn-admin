@@ -102,12 +102,10 @@ const CustomerForm: React.FC = () => {
     };
 
     const formValidate = () => {
-      console.log(selectedMember);
-
-      if (!image) {
-        toast.error("Vui lòng chọn ảnh đại diện", { autoClose: 4000 });
-        return false;
-      }
+      // if (!image) {
+      //   toast.error("Vui lòng chọn ảnh đại diện", { autoClose: 4000 });
+      //   return false;
+      // }
 
       return true;
     };
@@ -115,10 +113,11 @@ const CustomerForm: React.FC = () => {
       e.preventDefault();
       if (!formValidate()) return;
 
-      formData.code = `DH8.01701989`;
+      // formData.code = `DH8.01701989`;
+      // formData.image = !image ? "" : image;
       formData.password = formData.phone;
       formData.username = formData.phone;
-      formData.avatar = image.toString();
+      formData.avatar = !image ? "" : image.toString();
       formData.email = "";
       formData.current_residence = "";
       formData.sex = selectedItem.id;
