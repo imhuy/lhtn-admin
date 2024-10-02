@@ -13,8 +13,8 @@ const Profile: NextPage<any> = () => {
           <h2 className='text-2xl font-semibold mb-4 text-gray-700'>1. Chính Sách Nội Dung</h2>
           <div className='mb-6'>
             <p className='text-gray-700 mb-2'>
-              Ứng dụng Đại Hội VIII cam kết tuân thủ các chính sách nội dung của Google Play, đảm bảo rằng tất cả các
-              nội dung trong ứng dụng đều phù hợp và không vi phạm quy định. Cụ thể:
+              Ứng dụng Đại Hội LHTN VIII cam kết tuân thủ các chính sách nội dung của Google Play, đảm bảo rằng tất cả
+              các nội dung trong ứng dụng đều phù hợp và không vi phạm quy định. Cụ thể:
             </p>
             <ul className='list-disc list-inside text-gray-700'>
               <li className='mb-2'>
@@ -37,8 +37,8 @@ const Profile: NextPage<any> = () => {
           <h2 className='text-2xl font-semibold mb-4 text-gray-700'>2. Chính Sách Quyền Riêng Tư</h2>
           <div className='mb-6'>
             <p className='text-gray-700 mb-2'>
-              Ứng dụng Đại Hội VIII đảm bảo bảo vệ quyền riêng tư của người dùng, cung cấp thông tin minh bạch về việc
-              thu thập và sử dụng dữ liệu cá nhân. Cụ thể:
+              Ứng dụng Đại Hội LHTN VIII đảm bảo bảo vệ quyền riêng tư của người dùng, cung cấp thông tin minh bạch về
+              việc thu thập và sử dụng dữ liệu cá nhân. Cụ thể:
             </p>
             <ul className='list-disc list-inside text-gray-700'>
               <li className='mb-2'>
@@ -66,8 +66,8 @@ const Profile: NextPage<any> = () => {
           <h2 className='text-2xl font-semibold mb-4 text-gray-700'>3. Chính Sách Về Quyền Sở Hữu Trí Tuệ</h2>
           <div className='mb-6'>
             <p className='text-gray-700 mb-2'>
-              Ứng dụng Đại Hội VIII cam kết tuân thủ các quy định về quyền sở hữu trí tuệ, đảm bảo rằng tất cả nội dung
-              và tài liệu trong ứng dụng đều hợp pháp và không vi phạm bản quyền. Cụ thể:
+              Ứng dụng LHTN VIII cam kết tuân thủ các quy định về quyền sở hữu trí tuệ, đảm bảo rằng tất cả nội dung và
+              tài liệu trong ứng dụng đều hợp pháp và không vi phạm bản quyền. Cụ thể:
             </p>
             <ul className='list-disc list-inside text-gray-700'>
               <li className='mb-2'>
