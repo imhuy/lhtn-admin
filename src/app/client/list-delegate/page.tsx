@@ -138,6 +138,7 @@ const ListDelegate: NextPage<any> = () => {
                               pathname: "update-delegate",
                               query: { code: item.code },
                             }}
+                            target='_blank'
                             // onClick={() => deleteItem(item.id, item.full_name)}
                             className=' bg-primary-500  w-16   p-1 border z-50  px-2   border-slate-400 rounded-md   text-white	'
                           >

@@ -243,29 +243,37 @@ export default function Home() {
             <img
               src={data?.avatar}
               alt='Sample Image'
-              className='w-[104px] h-[154px]  absolute  top-[256px] left-[148px] '
+              className='w-[95px] h-[144px]  absolute  top-[210px] left-[155px] rounded-[5px] '
             />
           ) : (
             <img
               src='/avatar.jpg'
               alt='Sample Image'
-              className='w-[104px] h-[154px]  absolute  top-[256px] left-[148px] '
+              className='w-[95px] h-[144px]  absolute  top-[210px] left-[155px] '
             />
           )}
 
-          <div className='flex flex-col self-center justify-start items-center   absolute top-[421px] left-[0px]  w-full '>
-            <span className=' text-[#0050A2] uppercase    font-utmHelvetIns  font-thin  text-[18px] text-center '>
+          <div className='flex flex-col self-center justify-center items-center w-full  absolute top-[370px] left-[0px]   '>
+            <span className=' text-white uppercase    font-utmHelvetIns  font-thin  text-[18px] text-center '>
               <div dangerouslySetInnerHTML={createMarkup(data?.full_name)} />
             </span>
-            <span className='  uppercase text-[#0050A2] w-[80%]  leading-[22px]   font-utmHelvetIns  font-thin     self-center text-center text-[16px]'>
+            <span className='  uppercase text-[#ffffff] w-[100%]   leading-6    font-utmHelvetIns  font-thin     self-center text-center text-[16px]'>
               <div dangerouslySetInnerHTML={createMarkup(data?.position)} />
             </span>
           </div>
 
-          <div className='flex flex-col self-center justify-start items-center absolute top-[455px] left-[150px]  w-[210px] '>
-            <span className=' text-[#3760AE] uppercase  font-workSansBold  text-[15px] '>
-              {/* Mã đại biểu : {data?.code} */}
-            </span>
+          <div className='absolute w-[70px] h-[70]  top-[473px] left-[163px]'>
+            <SVG
+              text={id ? id : "Không tìm thấy mã đại biểu"}
+              options={{
+                margin: 2,
+                width: 75,
+                color: {
+                  dark: "#F5F5F5",
+                  light: "#FFFFFF00",
+                },
+              }}
+            />
           </div>
         </div>
 
@@ -279,28 +287,14 @@ export default function Home() {
         <div className=' w-[400px] h-[600px] flex items-center flex-col  relative' id='captureQr'>
           <img src='/the2.jpg' alt='Sample Image' className=' w-[400px] h-[600px]  rounded-[10px]' />
 
-          <div className='absolute w-[70px] h-[70]  top-[320px] left-[248.5px]'>
+          <div className='absolute w-[70px] h-[70]  top-[275px] left-[138px]'>
             <SVG
-              text={id ? id : "Không tìm thấy mã đại biểu"}
+              text={"https://chatbot.zalo.me/ref/4492007223564508595?id=tailieudaihoi"}
               options={{
                 margin: 2,
-                width: 85,
+                width: 120,
                 color: {
-                  dark: "#D32A2C",
-                  light: "#FFFFFF00",
-                },
-              }}
-            />
-          </div>
-
-          <div className='absolute w-[70px] h-[70]  top-[320px] left-[74px]'>
-            <SVG
-              text={"https://chatbot.zalo.me/ref/4541578065285117921?id=tai-lieu-dai-hoi"}
-              options={{
-                margin: 2,
-                width: 85,
-                color: {
-                  dark: "#D32A2C",
+                  dark: "#F5F5F5",
                   light: "#FFFFFF00",
                 },
               }}
