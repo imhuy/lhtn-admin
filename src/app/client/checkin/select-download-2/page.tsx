@@ -26,7 +26,14 @@ export default function Home() {
     const blob = new Blob(byteArrays, { type: base64.split(",")[0].split(":")[1].split(";")[0] });
     return blob;
   };
-  const takeScreenshot = (id: string, avatar: string, name: string, stt: string, idElement: string) => {
+  const takeScreenshot = (
+    id: string,
+    avatar: string,
+    name: string,
+    stt: string,
+    place_of_residence: string,
+    idElement: string
+  ) => {
     setLoading(true);
     const style = document.createElement("style");
     document.head.appendChild(style);
@@ -57,7 +64,7 @@ export default function Home() {
               const imgData = fixedCanvas.toDataURL("image/png");
               const link: any = document.createElement("a");
               link.href = imgData;
-              link.download = `${stt}.${id}.png`;
+              link.download = `${place_of_residence}.${name}.${id}.${stt}.png`;
 
               document.body.appendChild(link);
               link.click();
@@ -176,7 +183,7 @@ export default function Home() {
 
         <button
           className='px-4 py-3  uppercase  bg-[#1E6FA2] rounded-md my-2  text-center self-center text-white  font-workSansBold  w-full  '
-          onClick={() => takeScreenshot(id, data.avatar, data.full_name, stt, "captureId")}
+          onClick={() => takeScreenshot(id, data.avatar, data.full_name, stt, data.place_of_residence, "captureId")}
           id='downloadImage'
         >
           Tải thẻ đại biểu

@@ -28,6 +28,8 @@ const ListDelegate: NextPage<any> = () => {
     queryFn: async () => await authApi.listDelegateUser(),
   });
 
+  console.log("listDelegate", listDelegate.data);
+
   const showConfirmation = async (message: string): Promise<boolean> => {
     return new Promise((resolve) => {
       const userConfirmed = window.confirm(message);
