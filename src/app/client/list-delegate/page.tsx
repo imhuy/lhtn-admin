@@ -14,7 +14,7 @@ export interface ItemType {
   full_name: string;
   created_at: string;
   position: string;
-  delegation: string;
+  place_of_residence: string;
   amount: number;
   friend: string;
   code: string;
@@ -122,7 +122,7 @@ const ListDelegate: NextPage<any> = () => {
                           <span className=' font-normal text-sm  '>{item.position}</span>
                         </td>
                         <td className='text-center font-normal text-sm w-32  whitespace-normal  '>
-                          <span className=' font-normal text-sm  '>{item.delegation}</span>
+                          <span className=' font-normal text-sm  '>{item.place_of_residence}</span>
                         </td>
                         <td className='text-center font-normal text-sm w-32    '>
                           <span className=' font-normal text-sm  '>{item.code} </span>

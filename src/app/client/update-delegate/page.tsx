@@ -121,6 +121,7 @@ const CustomerForm: React.FC = () => {
       formData.email = "";
       formData.current_residence = "";
       formData.sex = selectedItem.id;
+      formData.date_of_birth = moment(formData.date_of_birth).format("01/01/YYYY");
       formData.is_party_member = selectedMember.id;
       formData.delegation = delegation?.id?.toString();
 
@@ -130,6 +131,8 @@ const CustomerForm: React.FC = () => {
         if (fileInputRef.current) {
           fileInputRef.current.value = "";
         }
+        // close tab
+        window.close();
         toast.success("Cập nhật thông tin đại biểu thành công", { autoClose: 4000 });
         window.location.replace("list-delegate");
       } else {

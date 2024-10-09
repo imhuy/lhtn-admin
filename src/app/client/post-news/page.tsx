@@ -141,7 +141,7 @@ const Profile: NextPage<any> = () => {
 
       handleSubmit(element);
     }
-    sendPush();
+    // sendPush();
   };
 
   const sendPush = async () => {
@@ -226,7 +226,10 @@ const Profile: NextPage<any> = () => {
                 <span className=' mr-4'>Thông tin đại hội</span>
                 <input type='checkbox' onChange={(e) => handleCheckboxChange(e, 2)} />
               </div>
-
+              <div>
+                <span className=' mr-4'>Chương trình đại hội</span>
+                <input type='checkbox' onChange={(e) => handleCheckboxChange(e, 3)} />
+              </div>
               <input
                 ref={fileInputRef}
                 type='file'

@@ -109,7 +109,7 @@ export default function Home() {
         const hostname = window.location.hostname;
       }
       try {
-        const response = await axios.get(`https://mattranhanoi.com/api/user/get-delegation?code=${id}`);
+        const response = await axios.get(`https://api.daihoi.net/api/user/get-delegation?code=${id}`);
 
         const { data } = response.data;
         setData(data);
@@ -131,38 +131,46 @@ export default function Home() {
     return (
       <div className='flex flex-col  h-full w-[1080px]   '>
         <div className=' w-[1080px] h-[1920px] flex items-center mt-4 flex-col  relative' id='captureId'>
-          <img src='/anhdoc.png' alt='Sample Image' className=' w-[1080px] h-[1920px]  rounded-[10px]' />
+          <img src='/the1.jpg' alt='Sample Image' className=' w-[1080px] h-[1920px]  rounded-[10px]' />
 
           {data?.avatar ? (
             <img
               src={data?.avatar}
               alt='Sample Image'
-              className='w-[332px] rounded-full h-[333px]  absolute  top-[912px] left-[371px] '
+              className='w-[332px]   rounded-md h-[480px]  absolute  top-[690px] left-[371px] '
             />
           ) : (
             <img
               src='/avatar.jpg'
               alt='Sample Image'
-              className='w-[332px] rounded-full h-[324px]  absolute  top-[915px] left-[372px] '
+              className='w-[332px]   rounded-md  h-[480px] absolute  top-[700px] left-[371px] '
             />
           )}
 
-          <div className='flex flex-col self-center justify-start items-center   absolute top-[1300px] left-[0px]  w-full '>
-            <span className=' text-red-500 uppercase    font-utmHelvetIns  font-thin  text-[70px] text-center '>
+          <div className='flex flex-col self-center justify-start items-center   absolute top-[1200px] left-[0px]  w-full '>
+            <span className=' text-white uppercase    font-utmHelvetIns  font-thin text-[55px] text-center '>
               {/* {data?.full_name} */}
               <div dangerouslySetInnerHTML={createMarkup(data?.full_name)} />
               {/* <div dangerouslySetInnerHTML={createMarkup(data?.full_name)} /> */}
             </span>
-            <span className='  uppercase text-[#0050A2]     font-utmHelvetIns  font-thin     self-center text-center text-[58px]'>
+            <span className='  uppercase text-white  w-[95%]     font-utmHelvetIns  font-thin     self-center text-center text-[45px]'>
               {/* {data?.position} */}
               <div dangerouslySetInnerHTML={createMarkup(data?.position)} />
             </span>
           </div>
 
-          <div className='flex flex-col self-center justify-start items-center absolute top-[455px] left-[150px]  w-[210px] '>
-            <span className=' text-[#3760AE] uppercase  font-workSansBold  text-[15px] '>
-              {/* Mã đại biểu : {data?.code} */}
-            </span>
+          <div className='absolute w-[200px] h-[200px]  top-[1525px] left-[442px] '>
+            <SVG
+              text={id ? id : "Không tìm thấy mã đại biểu"}
+              options={{
+                margin: 2,
+                width: 200,
+                color: {
+                  dark: "#F5F5F5",
+                  light: "#FFFFFF00",
+                },
+              }}
+            />
           </div>
         </div>
 
