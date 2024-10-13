@@ -26,7 +26,7 @@ const Login: NextPage<any> = () => {
 
   useEffect(() => {
     if (authState) {
-      router.push("/checkin/select");
+      router.push("/client/checkin/select");
     } else {
       console.log("not logined");
     }
