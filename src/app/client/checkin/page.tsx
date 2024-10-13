@@ -38,7 +38,7 @@ export default function Home() {
               <div className='relative w-full   '>
                 <img src='/bgmttq.jpg' alt='Background Image' className='w-full   h-[100lvh]    ' />
 
-                <div className='delegate-position text-center  bg-slate-50 flex- flex-col'>
+                <div className='delegate-position text-center    flex- flex-col'>
                   <p className='  mb-8  text-[#2857A5]  font-utmHelvetIns  text-4xl font-utmHelvetIn   uppercase'></p>
                   <p className='mb-8   text-white text-center font-utmHelvetIns text-4xl md:text-5xl lg:text-6xl xl:text-6xl uppercase'>
                     {listHistory.data[0]?.full_name}
@@ -52,7 +52,7 @@ export default function Home() {
                   <img
                     src={listHistory.data[0]?.avatar}
                     alt='Black Image'
-                    className=' rounded-md w-[28%] h-[49%] custom-position'
+                    className=' rounded-md w-[28%]  h-[49%] custom-position'
                   />
                 ) : (
                   <img src='/avatar.jpg' alt='Black Image' className='rounded-full custom-position' />
