@@ -47,12 +47,12 @@ export default function Home() {
           img.onload = () => {
             // Tạo một canvas mới với kích thước cố định 800x1200
             const fixedCanvas = document.createElement("canvas");
-            fixedCanvas.width = 1200;
-            fixedCanvas.height = 1800;
+            fixedCanvas.width = 1080;
+            fixedCanvas.height = 1920;
             const ctx = fixedCanvas.getContext("2d");
             if (ctx) {
               // Vẽ nội dung của canvas ban đầu lên canvas mới với kích thước cố định
-              ctx.drawImage(img, 0, 0, 1200, 1800);
+              ctx.drawImage(img, 0, 0, 1080, 1920);
 
               const imgData = fixedCanvas.toDataURL("image/png");
               const link: any = document.createElement("a");
@@ -284,15 +284,15 @@ export default function Home() {
           Tải thẻ đại biểu
         </button>
 
-        <div className=' w-[400px] h-[600px] flex items-center flex-col  relative' id='captureQr'>
-          <img src='/the2.jpg' alt='Sample Image' className=' w-[400px] h-[600px]  rounded-[10px]' />
+        <div className=' w-[1080px] h-[1920px] flex items-center flex-col  relative' id='captureQr'>
+          <img src='/the2.jpg' alt='Sample Image' className=' w-[1080px] h-[1920px]  rounded-[10px]' />
 
-          <div className='absolute w-[70px] h-[70]  top-[275px] left-[138px]'>
+          <div className='absolute w-[70px] h-[70]  top-[900px] left-[378px]'>
             <SVG
               text={"https://chatbot.zalo.me/ref/4492007223564508595?id=tailieudaihoi"}
               options={{
                 margin: 2,
-                width: 120,
+                width: 320,
                 color: {
                   dark: "#F5F5F5",
                   light: "#FFFFFF00",

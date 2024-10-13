@@ -54,12 +54,12 @@ export default function Home() {
           img.onload = () => {
             // Tạo một canvas mới với kích thước cố định 800x1200
             const fixedCanvas = document.createElement("canvas");
-            fixedCanvas.width = 1080;
+            fixedCanvas.width = 1280;
             fixedCanvas.height = 1920;
             const ctx = fixedCanvas.getContext("2d");
             if (ctx) {
               // Vẽ nội dung của canvas ban đầu lên canvas mới với kích thước cố định
-              ctx.drawImage(img, 0, 0, 1080, 1920);
+              ctx.drawImage(img, 0, 0, 1280, 1920);
 
               const imgData = fixedCanvas.toDataURL("image/png");
               const link: any = document.createElement("a");
@@ -136,21 +136,21 @@ export default function Home() {
     }
 
     return (
-      <div className='flex flex-col  h-full w-[1080px]   '>
-        <div className=' w-[1080px] h-[1920px] flex items-center mt-4 flex-col  relative' id='captureId'>
-          <img src='/the1.jpg' alt='Sample Image' className=' w-[1080px] h-[1920px]  rounded-[10px]' />
+      <div className='flex flex-col  h-full w-[1280px]   '>
+        <div className=' w-[1280px] h-[1920px] flex items-center mt-4 flex-col  relative' id='captureId'>
+          <img src='/the1.jpg' alt='Sample Image' className=' w-[1280px] h-[1920px]  rounded-[10px]' />
 
           {data?.avatar ? (
             <img
               src={data?.avatar}
               alt='Sample Image'
-              className='w-[332px]   rounded-md h-[480px]  absolute  top-[690px] left-[371px] '
+              className='w-[332px]   rounded-md h-[480px]  absolute  top-[690px] left-[520px] '
             />
           ) : (
             <img
               src='/avatar.jpg'
               alt='Sample Image'
-              className='w-[332px]   rounded-md  h-[480px] absolute  top-[700px] left-[371px] '
+              className='w-[332px]   rounded-md  h-[480px] absolute  top-[700px] left-[520px] '
             />
           )}
 
@@ -166,12 +166,12 @@ export default function Home() {
             </span>
           </div>
 
-          <div className='absolute w-[200px] h-[200px]  top-[1525px] left-[442px] '>
+          <div className='absolute w-[220px] h-[220px]  top-[1520px] left-[570px] '>
             <SVG
               text={id ? id : "Không tìm thấy mã đại biểu"}
               options={{
                 margin: 2,
-                width: 200,
+                width: 220,
                 color: {
                   dark: "#F5F5F5",
                   light: "#FFFFFF00",

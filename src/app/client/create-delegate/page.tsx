@@ -184,8 +184,8 @@ const CustomerForm: React.FC = () => {
     e.preventDefault();
     if (!formValidate()) return;
 
-    formData.code = `HC${formData.phone.slice(-7)}`;
-    formData.password = formData.phone;
+    formData.code = `DH8.9871.${formData.phone.slice(-7)}`;
+    formData.password = "123456";
     formData.username = formData.phone;
     formData.avatar = image.toString();
     formData.sex = selectedItem.id;
@@ -299,7 +299,7 @@ const CustomerForm: React.FC = () => {
           name='place_of_residence'
           value={formData.place_of_residence}
           onChange={handleChange}
-          placeholder='Quê quán'
+          placeholder='Đoàn đại biểu'
         />
         <input
           // required={true}
