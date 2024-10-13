@@ -94,7 +94,7 @@ const ListDelegate: NextPage<any> = () => {
                 Danh sách đoàn đại biểu
               </button>
 
-              <a href='/client/checkin/delegate-show' target='blank'>
+              <a href='/client/checkin/' target='blank'>
                 <span className=' text-blue-500 font-workSansSemiBold'>Mở màn hình</span>
               </a>
 

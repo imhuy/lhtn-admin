@@ -15,7 +15,6 @@ export default function Home() {
       queryFn: async () => await authApi.CheckinHistory(),
     });
 
-    console.log("listHistorylistHistorylistHistory", listHistory.data);
     useEffect(() => {
       const intervalId = setInterval(() => {
         getData(intervalId);
