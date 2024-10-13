@@ -52,10 +52,14 @@ export default function Home() {
                   <img
                     src={listHistory.data[0]?.avatar}
                     alt='Black Image'
-                    className=' rounded-md w-[28%]  h-[49%] custom-position'
+                    className=' rounded-md w-[28%]  border-2 border-white h-[49%] custom-position'
                   />
                 ) : (
-                  <img src='/avatar.jpg' alt='Black Image' className='rounded-full custom-position' />
+                  <img
+                    src='/avatar.jpg'
+                    alt='Black Image'
+                    className='rounded-full  border-2 border-white custom-position'
+                  />
                 )}
               </div>
             </body>
