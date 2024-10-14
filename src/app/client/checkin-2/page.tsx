@@ -1,0 +1,81 @@
+"use client";
+import { authApi } from "@/api-client";
+import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
+
+export default function Home() {
+  function MainView() {
+    const searchParams = useSearchParams();
+    const [id] = searchParams.getAll("id") || "";
+    // const [data, setData] = useState<any>(null);
+
+    const listHistory = useQuery({
+      queryKey: ["checkinHistoryScan"],
+      queryFn: async () => await authApi.CheckinHistory(),
+    });
+
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        getData(intervalId);
+      }, 1000);
+      getData(intervalId);
+      return () => clearInterval(intervalId);
+    }, []);
+
+    const getData = async (clearId?: any) => {
+      try {
+        listHistory.refetch();
+      } catch (error) {
+        // toast.error("Error when payment, please try again!");
+      }
+    };
+    return (
+      <>
+        {!listHistory.isLoading && (
+          <div className='   '>
+            <body className='    bg-[#FFE18A]'>
+              <div className='relative w-full   '>
+                <img src='/bgmttq.jpg' alt='Background Image' className='w-full   h-[100lvh]    ' />
+
+                <div className='delegate-position text-center    flex- flex-col'>
+                  <p className='  mb-8  text-white   font-utmHelvetIns text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-utmHelvetIn   uppercase'>
+                    {" "}
+                    Chào mừng đại biểu
+                  </p>
+                  <p className='mb-8   text-white text-center font-utmHelvetIns  text-[128px] uppercase'>
+                    {listHistory.data[0]?.full_name}
+                  </p>
+                  <p className='  mb-8   text-white  text-center font-utmHelvetIns    text-[72px] uppercase'>
+                    {listHistory.data[0]?.position}
+                  </p>
+                </div>
+
+                {listHistory.data[0]?.avatar ? (
+                  <img
+                    src={listHistory.data[0]?.avatar}
+                    alt='Black Image'
+                    className=' rounded-md w-[28%]  border-2 border-white h-[49%] custom-position'
+                  />
+                ) : (
+                  <img
+                    src='/avatar.jpg'
+                    alt='Black Image'
+                    className='rounded-full  border-2 border-white custom-position'
+                  />
+                )}
+              </div>
+            </body>
+          </div>
+        )}
+      </>
+    );
+  }
+  return (
+    <div className='   justify-center'>
+      <Suspense>
+        <MainView />
+      </Suspense>
+    </div>
+  );
+}
